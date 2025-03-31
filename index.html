@@ -12,7 +12,7 @@
             padding: 0;
             text-align: center; 
             padding-top: 60px;
-            min-width: 320px; /* Adicionado para evitar quebra em telas muito pequenas */
+            min-width: 320px; 
         }
 
         .header {
@@ -28,20 +28,20 @@
             padding: 15px 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             z-index: 1000;
-            flex-wrap: wrap; /* Permite que os itens quebrem linha quando necessário */
+            flex-wrap: wrap; 
         }
 
         .logo {
             font-size: 28px;
             font-weight: bold;
-            margin: 5px 0; /* Adicionado espaçamento para quando quebrar linha */
+            margin: 5px 0; 
         }
 
         .nav {
             display: flex;
             gap: 15px;
-            flex-wrap: wrap; /* Permite que os links quebrem linha */
-            justify-content: center; /* Centraliza quando quebra linha */
+            flex-wrap: wrap; 
+            justify-content: center; 
         }
 
         .nav a {
@@ -51,9 +51,9 @@
             padding: 8px 12px;
             border-radius: 5px;
             transition: background 0.3s;
-            margin-right: 10px; /* Reduzido para melhor ajuste */
-            margin-bottom: 5px; /* Adicionado espaçamento vertical */
-            white-space: nowrap; /* Evita que o texto quebre */
+            margin-right: 40px; 
+            margin-bottom: 5px;
+            white-space: nowrap;
         }
 
         .nav a:hover {
@@ -75,9 +75,9 @@
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             width: 250px;
             text-align: left;
-            flex-grow: 1; /* Permite que cresça quando necessário */
-            min-width: 250px; /* Define largura mínima */
-            max-width: 300px; /* Define largura máxima */
+            flex-grow: 1; 
+            min-width: 250px;
+            max-width: 300px; 
         }
 
         .text {
@@ -92,7 +92,7 @@
             margin: 25px auto; 
             align-items: center; 
             text-align: center; 
-            width: calc(100% - 30px); /* Ajusta automaticamente com margens */
+            width: calc(100% - 30px); 
         }
 
         h1, h2 {
@@ -119,7 +119,7 @@
         }
 
         .entidade + .entidade {
-            margin-top: 0; /* Removido para usar gap */
+            margin-top: 0; 
         }
 
         p {
@@ -127,7 +127,7 @@
             margin: 20px auto;
             line-height: 1.6;
             text-align: left;
-            width: 100%; /* Garante que o texto use toda a largura disponível */
+            width: 100%; 
         }
 
         .imagens {
@@ -136,7 +136,7 @@
             justify-content: center; 
             gap: 20px;
             align-items: stretch;
-            flex-wrap: wrap; /* Permite que quebre linha quando necessário */
+            flex-wrap: wrap;
         }
 
         .relac {
@@ -148,14 +148,7 @@
             padding: 15px;
             border-radius: 8px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            min-width: 300px; /* Largura mínima antes de quebrar */
-        }
-
-        .relac img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
+            min-width: 300px; 
         }
 
         section {
@@ -166,7 +159,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Melhorias para telas médias (janela redimensionada) */
+        
         @media (max-width: 1100px) {
             .header {
                 padding: 10px 15px;
