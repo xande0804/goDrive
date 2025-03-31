@@ -12,6 +12,7 @@
             padding: 0;
             text-align: center; 
             padding-top: 60px;
+            min-width: 320px; /* Adicionado para evitar quebra em telas muito pequenas */
         }
 
         .header {
@@ -27,16 +28,20 @@
             padding: 15px 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+            flex-wrap: wrap; /* Permite que os itens quebrem linha quando necessário */
         }
 
         .logo {
             font-size: 28px;
             font-weight: bold;
+            margin: 5px 0; /* Adicionado espaçamento para quando quebrar linha */
         }
 
         .nav {
             display: flex;
             gap: 15px;
+            flex-wrap: wrap; /* Permite que os links quebrem linha */
+            justify-content: center; /* Centraliza quando quebra linha */
         }
 
         .nav a {
@@ -46,7 +51,9 @@
             padding: 8px 12px;
             border-radius: 5px;
             transition: background 0.3s;
-            margin-right: 30px;
+            margin-right: 10px; /* Reduzido para melhor ajuste */
+            margin-bottom: 5px; /* Adicionado espaçamento vertical */
+            white-space: nowrap; /* Evita que o texto quebre */
         }
 
         .nav a:hover {
@@ -67,12 +74,15 @@
             border-radius: 8px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             width: 250px;
-            text-align: left; 
+            text-align: left;
+            flex-grow: 1; /* Permite que cresça quando necessário */
+            min-width: 250px; /* Define largura mínima */
+            max-width: 300px; /* Define largura máxima */
         }
 
         .text {
             background-color: #f4f4f4;
-            padding: 10px;
+            padding: 15px;
             border-radius: 8px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
             max-width: 850px;
@@ -82,10 +92,12 @@
             margin: 25px auto; 
             align-items: center; 
             text-align: center; 
+            width: calc(100% - 30px); /* Ajusta automaticamente com margens */
         }
 
         h1, h2 {
             color: #333;
+            margin: 15px 0;
         }
 
         h3 {
@@ -107,134 +119,124 @@
         }
 
         .entidade + .entidade {
-            margin-top: 10px;
+            margin-top: 0; /* Removido para usar gap */
         }
 
         p {
             max-width: 800px;
             margin: 20px auto;
             line-height: 1.6;
+            text-align: left;
+            width: 100%; /* Garante que o texto use toda a largura disponível */
         }
 
-        .imagens{
+        .imagens {
             text-align: center;
             display: flex;
             justify-content: center; 
             gap: 20px;
             align-items: stretch;
+            flex-wrap: wrap; /* Permite que quebre linha quando necessário */
         }
 
-        .relac{
+        .relac {
             display: inline-block; 
             align-items: center;
-            margin: 0 20px;
+            margin: 10px;
             background-color: #f4f4f4;
-            flex: 1;
+            flex: 1 1 400px; /* Cresce e encolhe com base no espaço */
             padding: 15px;
             border-radius: 8px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            min-width: 300px; /* Largura mínima antes de quebrar */
         }
+
+        .relac img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
         section {
             scroll-margin-top: 80px; 
         }
     
-        html{
+        html {
             scroll-behavior: smooth;
         }
 
-        .nav-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .nav-item {
-            margin: 10px 0;
-        }
-
-        .sub-menu {
-            display: none; 
-            margin-top: 5px;
-            padding-left: 20px;
-        }
-
-        .nav-item:hover .sub-menu {
-            display: block; 
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #000;
-            font-size: 16px;
-        }
-
-        .nav-link:hover {
-            color: #007BFF; 
-        }
-
-        .sub-item {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-
-        /* Responsividade */
-        @media (max-width: 1200px) {
-            .relac {
-                width: 90%;
-                margin: 10px auto;
+        /* Melhorias para telas médias (janela redimensionada) */
+        @media (max-width: 1100px) {
+            .header {
+                padding: 10px 15px;
             }
             
-            .relac img {
-                max-width: 100%;
-                height: auto;
+            .logo {
+                font-size: 24px;
+            }
+            
+            .nav a {
+                padding: 6px 10px;
+                font-size: 14px;
+                margin-right: 5px;
+            }
+            
+            .entidade {
+                min-width: 220px;
             }
         }
 
-        @media (max-width: 992px) {
+        @media (max-width: 850px) {
+            .text {
+                width: 95%;
+                padding: 10px;
+            }
+            
+            .relac {
+                flex: 1 1 350px;
+            }
+        }
+
+        @media (max-width: 700px) {
             .header {
                 flex-direction: column;
-                padding: 10px;
+                padding-top: 10px;
+                padding-bottom: 10px;
             }
             
             .logo {
                 margin-bottom: 10px;
-                font-size: 24px;
             }
             
             .nav {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
+                width: 100%;
+                gap: 8px;
             }
             
             .nav a {
                 margin-right: 0;
-                padding: 6px 10px;
-                font-size: 14px;
+                flex-grow: 1;
+                text-align: center;
             }
             
-            .text {
-                width: 90%;
-            }
-            
-            .imagens {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        @media (max-width: 768px) {
             body {
                 padding-top: 100px;
             }
             
+            section {
+                scroll-margin-top: 120px;
+            }
+        }
+
+        @media (max-width: 500px) {
             .entidade {
-                width: 100%;
-                max-width: 300px;
+                min-width: 100%;
+                max-width: 100%;
             }
             
             .relac {
-                width: 95%;
-                padding: 10px;
+                min-width: 100%;
             }
             
             h1 {
@@ -243,38 +245,6 @@
             
             h2 {
                 font-size: 20px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .header {
-                padding: 8px;
-            }
-            
-            .logo {
-                font-size: 20px;
-            }
-            
-            .nav a {
-                padding: 5px 8px;
-                font-size: 12px;
-            }
-            
-            .ent {
-                gap: 10px;
-            }
-            
-            .text {
-                padding: 8px;
-                width: 95%;
-            }
-            
-            p {
-                font-size: 14px;
-            }
-            
-            section {
-                scroll-margin-top: 120px;
             }
         }
     </style>
