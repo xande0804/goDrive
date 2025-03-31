@@ -176,7 +176,107 @@
             font-size: 14px;
         }
 
+        /* Responsividade */
+        @media (max-width: 1200px) {
+            .relac {
+                width: 90%;
+                margin: 10px auto;
+            }
+            
+            .relac img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
 
+        @media (max-width: 992px) {
+            .header {
+                flex-direction: column;
+                padding: 10px;
+            }
+            
+            .logo {
+                margin-bottom: 10px;
+                font-size: 24px;
+            }
+            
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            
+            .nav a {
+                margin-right: 0;
+                padding: 6px 10px;
+                font-size: 14px;
+            }
+            
+            .text {
+                width: 90%;
+            }
+            
+            .imagens {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 100px;
+            }
+            
+            .entidade {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .relac {
+                width: 95%;
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                padding: 8px;
+            }
+            
+            .logo {
+                font-size: 20px;
+            }
+            
+            .nav a {
+                padding: 5px 8px;
+                font-size: 12px;
+            }
+            
+            .ent {
+                gap: 10px;
+            }
+            
+            .text {
+                padding: 8px;
+                width: 95%;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+            
+            section {
+                scroll-margin-top: 120px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -579,4 +679,4 @@
         </div>
     </section>
 </body>
-</html> 
+</html>
